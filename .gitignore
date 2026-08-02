@@ -1,0 +1,15 @@
+# 密钥 / 凭证（绝不进仓库）
+pki/
+*-token
+admin-token
+*.pem
+*.key
+
+# AgentTeams 运行时数据库（体积大、非配置，不入库）
+*.db
+*.db-shm
+*.db-wal
+
+# Python 缓存
+__pycache__/
+*.pyc

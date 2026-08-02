@@ -1,0 +1,17 @@
+{
+  "apiVersion": "agentteams.io/v1beta1",
+  "kind": "Manager",
+  "metadata": {
+    "name": "default",
+    "namespace": "default",
+    "uid": "a8f7efff-8d31-40a3-9580-8ba23532f2a1",
+    "creationTimestamp": "2026-08-01T09:13:13Z",
+    "annotations": {}
+  },
+  "spec": {
+    "config": {},
+    "image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/agentteams/agentteams-manager:latest",
+    "model": "deepseek-v4-flash",
+    "runtime": "openclaw"
+  }
+}
