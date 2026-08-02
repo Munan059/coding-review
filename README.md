@@ -4,17 +4,7 @@
 
 **一句话定位：用 4 个智能体在 AgentTeams 上跑通「审查 → 修复 → 测试」代码审查闭环，实测 14/14 测试通过**
 
-![framework](https://img.shields.io/badge/framework-AgentTeams-blue)
-
-![language](https://img.shields.io/badge/language-Python-3776AB)
-
-![license](https://img.shields.io/badge/license-MIT-green)
-
-
-
-![tests](https://img.shields.io/badge/tests-14%2F14%20passed-brightgreen)
-
-![track](https://img.shields.io/badge/track-Agent%20Infra%20%2F%20新智基座-orange)
+![framework](https://img.shields.io/badge/framework-AgentTeams-blue) ![language](https://img.shields.io/badge/language-Python-3776AB) ![license](https://img.shields.io/badge/license-MIT-green) ![tests](https://img.shields.io/badge/tests-14%2F14%20passed-brightgreen)
 
 [亮点](#-功能亮点) · [架构](#-架构设计) · [快速开始](#-快速开始) · [目录结构](#-目录结构) · [致谢](#-致谢)
 
@@ -65,17 +55,38 @@
 
 ## 🚀 快速开始
 
-### 环境要求
+本项目的「4 智能体代码审查系统」跑在 **AgentTeams** 平台上（Docker 容器），不是克隆仓库后直接运行。下面两种方式分别说明：方式一是真实使用这套智能体，方式二是本地验证我们提交的演示结果。
 
-- Python 3.8+（仅用到标准库 `sys` / `traceback`，无需安装第三方依赖）
+### 方式一：用 AgentTeams 运行这套智能体（真实使用）
 
-### 运行端到端验证案例（find_max）
+> 前提：你本机已安装并启动 Docker Desktop（WSL2 后端），且已部署 AgentTeams（一键安装脚本见下）。
+
+1. 打开 Docker Desktop，确认 AgentTeams 相关容器在运行。
+2. 浏览器访问控制台：`http://localhost:18080`，用安装时设置的管理员账号登录（Matrix / Element Web）。
+3. 把任务发给 **Manager（经理 Agent）**：在 Manager 的对话 / 房间里直接发需求，例如：
+   > 请审查这段代码：<粘贴代码或仓库地址>
+   Manager 会把它拆解成「审查 → 修复 → 测试」子任务，并协调 devteam 里的 orchestrator / reviewer / fixer / tester 接力完成。
+4. 想看过程或介入时，随时进入对应的 Matrix 房间——人可实时查看、干预、确认 / 回滚（这是 AgentTeams 的 Human-in-the-Loop 设计）。
+
+首次部署 AgentTeams（Windows，PowerShell 7+）：
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; $wc=New-Object Net.WebClient; $wc.Encoding=[Text.Encoding]::UTF8; iex $wc.DownloadString('https://higress.ai/hiclaw/install.ps1')
+```
+
+按提示选择中文、模型服务商并填入 API Key 即可，装完自动启动所有容器。
+
+### 方式二：本地验证演示结果（仅跑测试脚本，不启动智能体）
+
+`find_max_demo/` 是这套流水线在 `find_max` 上的端到端实测产物（原始缺陷代码、修复后代码、审查报告、回归测试）。下面这条命令**只运行测试脚本**，用来验证「修复 → 测试」环节的结果，**不会启动那 4 个智能体**：
 
 ```bash
 git clone https://github.com/Munan059/coding-review.git
 cd coding-review/find_max_demo
 python test_find_max.py
 ```
+
+环境要求：Python 3.8+（仅用到标准库 `sys` / `traceback`，无需安装第三方依赖）。
 
 预期输出：
 
