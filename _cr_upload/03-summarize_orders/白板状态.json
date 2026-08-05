@@ -1,0 +1,10 @@
+{
+  "task_id": "summarize-orders-review-20260805-061309",
+  "scenario_id": "summarize_orders",
+  "status": "完成",
+  "current_gate": "G6",
+  "ack_status": "已确认 / 不执行写操作",
+  "review_report": "高4/中3/低5。关键发现：[HIGH-1] 第 5 行 range(1, len(orders)) 漏掉第一个订单，avg 错误（[A:1000,B:100,C:2000] 期望 avg=1500 实际 1050）；[HIGH-2] 空/单元素列表抛 IndexError、len=0 抛 ZeroDivisionError；[HIGH-3] top_buyer 恒等于第一个买家名（amount>best 恒 False，[A:50,B:1000,C:3000] 期望 C 实际 A）；[HIGH-4] SQL 字符串拼接注入（买家名 x' OR '1'='1 直接进 SQL）。[MEDIUM-1] 可变默认参数 vip_levels=[] 反模式；[MEDIUM-2] 统计函数内嵌 send_alert 副作用；[MEDIUM-3] 外部依赖 db 未定义。[LOW] avg 衍生、KeyError 风险、缺 docstring、result 冗余、浮点精度。详见 shared/tasks/summarize-orders-review-20260805-061309-01/workspace/review_report.md",
+  "fixed_code": "修复完成（-02，fixer）。实现见 shared/tasks/summarize-orders-review-20260805-061309-02/workspace/fixed_summarize_orders.py。修复要点：[HIGH-1] 遍历全部订单收集 amounts（avg 含首单，[A:1000,B:100,C:2000] avg=1033.33）；[HIGH-2] 空列表返回约定空结果（total=0/count=0/vip_total=0/top_buyer=None/flagged=[]/avg=0.0/discount_total=0），单元素正常计算；[HIGH-3] top_buyer 用 max(orders, key=amount) 按金额取买家（[A:50,B:1000,C:3000] → C）；[HIGH-4] SQL 改为参数化查询 execute_query(\"SELECT * FROM orders WHERE buyer = ?\", (top_buyer,))，禁止字符串拼接；[MEDIUM-1] vip_levels=None 哨兵；[MEDIUM-2] 统计与 send_alert 解耦（仅返回 flagged，不再内嵌告警副作用）；[MEDIUM-3] execute_query 依赖注入（默认 None 不执行查询）；[LOW] 补 docstring 契约（输入结构 name/amount/level、返回值各字段语义）、去除 result 冗余初始化、Decimal 计算折扣规避浮点精度。验证：verify_fixed_summarize_orders.py 实测 7 项全部 PASS（正常多订单/单元素/空列表/top_buyer 归属/SQL 注入防护/无参调用/默认参数无污染），doctest 通过。",
+  "test_result": "ran=7/passed=7/regression=无（原 6 处缺陷：漏首单致 avg=1050/top_buyer 错误、空/单元素 IndexError、SQL 拼接注入、send_alert 副作用全部复现且修复后全部修复，其余字段一致）/note=独立测试 7/7 契约用例 + 4 项专项检查（默认参数无污染、SQL 注入防护参数化、execute_query 缺省不执行、无 send_alert 副作用）全部 PASS，EXIT=0。边界实跑（orchestrator 复核，python3 直接运行交付文件）：空列表 [] → {total:0,count:0,vip_total:0,top_buyer:None,flagged:[],avg:0.0,discount_total:0}；单元素 [A:500] → discount_total=500.0；单元素 [A:600] → discount_total=540.0；正常 [A:1000,B:100,C:2000] → total=3100,count=3,avg=1033.33,top_buyer=C,flagged=[C],discount_total=2800.0。详见 shared/tasks/summarize-orders-review-20260805-061309-03/workspace/test_report.md"
+}

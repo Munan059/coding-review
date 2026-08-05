@@ -1,0 +1,10 @@
+{
+  "task_id": "rank-students-review-20260805-050346",
+  "scenario_id": "rank_students",
+  "status": "完成",
+  "current_gate": "G6",
+  "ack_status": "待确认",
+  "review_report": "高3/中2/低3。关键发现：[HIGH-1] 第 4 行 range(1, len(students)) 漏掉第一个学生，scores 不完整致 top/avg 错误（[A:100,B:50] 期望 top=100、avg=75，实际 top=50、avg=50）；[HIGH-2] 空列表/单元素列表抛 IndexError（len=0 时还 ZeroDivisionError）；[HIGH-3] 第 12 行 second=None 与 int 比较抛 TypeError（[A:100,B:50,C:80] 实测崩溃）。[MEDIUM-1] 可变默认参数 students=[] 反模式；[MEDIUM-2] 并列最高分时 runner_up 语义未明确。详见 shared/tasks/rank-students-review-20260805-050346-01/workspace/review_report.md",
+  "fixed_code": "修复说明：HIGH-1 改为遍历全部学生收集 scores（[A:100,B:50] 现 top=100、avg=75.0）；HIGH-2 空列表守卫返回约定空结果、单元素正常计算（不再 IndexError/ZeroDivisionError）；HIGH-3 runner_up 用唯一分数集合取第二高不同分数（[A:100,B:50,C:80] → runner_up=80，不再 TypeError）；MEDIUM-1 students=None 哨兵消除可变默认参数；MEDIUM-2 并列契约在 docstring 明确（第二高不同分数，全并列为 None）；LOW 去掉 ranked 冗余、avg 基于完整 scores、补 docstring。实际代码文件：shared/tasks/rank-students-review-20260805-050346-02/workspace/fixed_rank_students.py（验证脚本 verify_fixed_rank_students.py 覆盖 9 场景全部 PASS，doctest 通过）",
+  "test_result": "ran=12/passed=12/regression=无（原 11 处缺陷全部复现且修复后全部修复，其余场景与原实现输出一致）/note=独立测试 12/12 契约用例 + 默认参数无污染 PASS，EXIT=0。详见 shared/tasks/rank-students-review-20260805-050346-03/workspace/test_report.md"
+}
