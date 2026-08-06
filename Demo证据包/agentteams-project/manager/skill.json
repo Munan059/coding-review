@@ -1,0 +1,422 @@
+{
+  "schema_version": "workspace-skill-manifest.v1",
+  "version": 1785924346298,
+  "skills": {
+    "agentteams-find-worker": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "agentteams-find-worker",
+        "description": "Use as a helper when the admin is assigning work but has not specified an existing Worker, so you need to search Nacos for a suitable Worker and ask whether to import it; also use when the admin explicitly says to import a Worker from the market or gives a direct nacos package URI.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:18.969690Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:18.969690Z"
+    },
+    "channel-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "channel-management",
+        "description": "Use when determining sender identity in any room, managing trusted contacts, configuring the admin's primary notification channel, handling first-contact from a new channel, or escalating to admin across channels.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:18.965895Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:18.965895Z"
+    },
+    "file-sync-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "file-sync-management",
+        "description": "Use when you need to push files to MinIO for Workers to access, pull Worker output from MinIO, or when a Worker reports they've uploaded files. Also use when notifying Workers to file-sync after writing files they need.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:18.992457Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:18.992457Z"
+    },
+    "git-delegation-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "git-delegation-management",
+        "description": "Execute git operations on behalf of Workers who don't have git credentials. Use when a Worker sends a git-request: message to clone, push, pull, commit, rebase, or perform any git operation.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.030403Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.030403Z"
+    },
+    "human-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "human-management",
+        "description": "Use when admin requests adding a human user to the system, changing human permissions, removing human access, or managing human accounts.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.034198Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.034198Z"
+    },
+    "matrix-server-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "matrix-server-management",
+        "description": "Use for standalone Matrix admin requests (register users, create rooms, manage membership, upload files). Also use when you need to send a file to the admin via Matrix media upload. Do NOT use for Worker/project creation — those handle Matrix operations internally.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.034198Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.034198Z"
+    },
+    "mcp-server-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "mcp-server-management",
+        "description": "Use when admin asks to configure an MCP tool server (e.g., GitHub, weather API), rotate credentials, grant/revoke worker access to MCP tools, or add a custom API integration via YAML.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.034198Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.034198Z"
+    },
+    "mcporter": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "mcporter",
+        "description": "Call MCP Server tools directly via the mcporter CLI. Use when you need to interact with external APIs (GitHub, weather, etc.) without delegating to a Worker — useful for quick lookups or when you need a result to make a decision.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.034198Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.034198Z"
+    },
+    "model-switch": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "model-switch",
+        "description": "Switch the Manager Agent's own LLM model. Use when the human admin requests changing the Manager's model.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.041787Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.041787Z"
+    },
+    "project-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "project-management",
+        "description": "Use when admin asks to start a multi-worker project, when a Worker @mentions you with task completion in a project room, when project plan changes are needed, or when a blocked task needs resolution.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.045582Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.045582Z"
+    },
+    "service-publishing": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "service-publishing",
+        "description": "Expose worker HTTP services via Higress gateway. Use when admin asks to publish a worker's web app or API to make it externally accessible.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.049376Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.049376Z"
+    },
+    "task-coordination": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "task-coordination",
+        "description": "Coordinate access to shared task directories using .processing marker files. Use before accessing a Worker's workspace to prevent conflicts when both Manager and Worker might modify files simultaneously.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.053171Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.053171Z"
+    },
+    "task-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "task-management",
+        "description": "Use when admin gives a task to delegate to a Worker, when a Worker reports task completion, when managing recurring scheduled tasks, or when you need to check worker availability.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.056965Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.056965Z"
+    },
+    "team-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "team-management",
+        "description": "Use when admin requests creating a team, importing a team, managing team composition, adding/removing workers from a team, or delegating tasks to a Team Leader.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.072144Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.072144Z"
+    },
+    "worker-management": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "worker-management",
+        "description": "Use when admin requests hand-creating or resetting a Worker, starting/stopping a Worker, managing Worker skills, enabling peer mentions, or opening a QwenPaw console. Use agentteams-find-worker only as a helper for Nacos-backed market import or when task assignment needs you to discover a suitable Worker.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.079733Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.079733Z"
+    },
+    "worker-model-switch": {
+      "enabled": true,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "worker-model-switch",
+        "description": "Switch a Worker Agent's LLM model via agt CLI. Use when the human admin requests changing a Worker's model.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T04:08:19.117679Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T04:08:19.117679Z"
+    }
+  }
+}

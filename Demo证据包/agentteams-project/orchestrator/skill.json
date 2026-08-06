@@ -1,0 +1,214 @@
+{
+  "schema_version": "workspace-skill-manifest.v1",
+  "version": 1785924391689,
+  "skills": {
+    "communication": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "communication",
+        "description": "Use before sending or suppressing any Leader message to Workers, Manager, or Team Admin. Always use this skill for cross-room Matrix messages, @mention decisions, task assignment notifications, structured status reports, completion reports, blocker/revision messages, questions, requester updates, or when deciding whether a same-room reply is enough.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.884975Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.884975Z"
+    },
+    "file-sharing": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "file-sharing",
+        "description": "Use before filesync calls for project directories, global-shared inputs, non-task shared files, listing shared paths, or troubleshooting missing files. Do not use for task-level sync; taskflow delegate_task and check_task handle task directory sync internally.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.884975Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.884975Z"
+    },
+    "find-skills": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "find-skills",
+        "description": "Discover and install agent skills from the open ecosystem. Use when you encounter an unfamiliar domain, framework, or workflow that you lack specialized knowledge about, or when your coordinator suggests searching for skills before starting a task.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.884975Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.884975Z"
+    },
+    "mcporter": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "mcporter",
+        "description": "Discover and call MCP Server tools via the mcporter CLI. Use when your coordinator notifies you about new MCP tools, or when you need to call external APIs. Includes workflow for generating skill documentation for new MCP servers.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.888575Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.888575Z"
+    },
+    "organization": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "organization",
+        "description": "Use before any Leader action that depends on current team topology, worker list, worker phase, runtime, room ID, Matrix ID, Team Admin, human identity, or lifecycle state. Always use this skill when assigning tasks, sending cross-room messages, recovering projects, handling heartbeat, waking/sleeping workers, or when any worker/room/identity value might be stale.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.888575Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.888575Z"
+    },
+    "task-management": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "task-management",
+        "description": "Use before any Leader taskflow call or task-level workflow involving delegating a ready DAG or Loop node, writing task meta/spec, checking a Worker task result, handling result statuses, task directory ownership, or Worker result contracts. Always use this skill when the request mentions delegate_task, check_task, task result.md, task spec.md, BLOCKED, REVISION_NEEDED, INTERRUPTED, SUCCESS, or assigning/delegating a Worker task.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.888575Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.888575Z"
+    },
+    "project-management": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "project-management",
+        "description": "Use before any projectflow call or Team Leader workflow involving Project state, Project lifecycle, DAG planning, Loop planning, ready node checks, pause/resume/complete, project recovery, heartbeat project checks, or project-level result aggregation. Always use team-coordination first when the question is how to organize the work.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.888575Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.888575Z"
+    },
+    "team-coordination": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "team-coordination",
+        "description": "Use before deciding how you should organize team work: DAG vs Loop, dependency shape, task waves, quality gates, acceptance criteria, interruption, replanning, or what to do after Worker results arrive. Always use this skill for team organization strategy before you call project-management or task-management.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-05T09:00:23.892175Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-05T09:00:23.892175Z"
+    }
+  }
+}

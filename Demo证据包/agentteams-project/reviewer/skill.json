@@ -1,0 +1,162 @@
+{
+  "schema_version": "workspace-skill-manifest.v1",
+  "version": 1785921632854,
+  "skills": {
+    "communication": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "communication",
+        "description": "Use before sending @mentions, deciding whether to reply, TASK_COMPLETED, BLOCKED, QUESTION, direct answers, loop prevention, or suppressing low-information acknowledgements.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-04T16:00:04.751328Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-04T16:00:04.751328Z"
+    },
+    "file-sharing": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "file-sharing",
+        "description": "Use before direct filesync calls, reading non-task shared files, pushing mid-task progress, or troubleshooting missing shared files. Do not use for normal task acceptance or submission; taskflow ack_task and submit_task handle lifecycle sync internally.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-04T16:00:04.751328Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-04T16:00:04.751328Z"
+    },
+    "find-skills": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "find-skills",
+        "description": "Discover and install agent skills from the open ecosystem. Use when you encounter an unfamiliar domain, framework, or workflow that you lack specialized knowledge about, or when your coordinator suggests searching for skills before starting a task.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-04T16:00:04.751328Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-04T16:00:04.751328Z"
+    },
+    "mcporter": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "mcporter",
+        "description": "Discover and call MCP Server tools via the mcporter CLI. Use when your coordinator notifies you about new MCP tools, or when you need to call external APIs. Includes workflow for generating skill documentation for new MCP servers.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-04T16:00:04.755317Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-04T16:00:04.755317Z"
+    },
+    "organization": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "organization",
+        "description": "Use only when you need to look up team topology, worker phase, runtime state, or identity that is NOT available from the current message context. Do not use for standard task flows — the coordinator is the message sender, and the task room is in meta.json.room_id.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-04T16:00:04.755317Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-04T16:00:04.755317Z"
+    },
+    "task-management": {
+      "enabled": false,
+      "channels": [
+        "all"
+      ],
+      "source": "customized",
+      "metadata": {
+        "name": "task-management",
+        "description": "Use before any Worker taskflow call or assigned-task workflow, including reading task state, acknowledging a task, executing a task, tracking progress, handling blockers/questions, submitting structured results, or reporting completion. Always use this skill when the message mentions assigned task, task ID, shared/tasks, spec.md, meta.json, result.md, deliverables, BLOCKED, REVISION_NEEDED, SUCCESS, submit_task, or ack_task.",
+        "version_text": "",
+        "commit_text": "",
+        "signature": "",
+        "source": "customized",
+        "protected": false,
+        "requirements": {
+          "require_bins": [],
+          "require_envs": []
+        },
+        "updated_at": "2026-08-04T16:00:04.755317Z"
+      },
+      "requirements": {
+        "require_bins": [],
+        "require_envs": []
+      },
+      "updated_at": "2026-08-04T16:00:04.755317Z"
+    }
+  }
+}
