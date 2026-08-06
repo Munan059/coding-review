@@ -1,0 +1,12 @@
+{
+  "task_id": "process-comments-review-20260805-083607-01",
+  "project_id": "process-comments-review-20260805-083607",
+  "task_title": "reviewer 审查 process_comments 代码并输出审查结论",
+  "assigned_to": "reviewer",
+  "room_id": "room:!oln45S9baHANw0Wiwg:matrix-local.agentteams.io:18080",
+  "status": "submitted",
+  "depends_on": [],
+  "assigned_at": "2026-08-05T08:37:01Z",
+  "acknowledged_at": "2026-08-05T08:37:09Z",
+  "submitted_at": "2026-08-05T08:38:07Z"
+}

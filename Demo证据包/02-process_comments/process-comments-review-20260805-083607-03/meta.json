@@ -1,0 +1,14 @@
+{
+  "task_id": "process-comments-review-20260805-083607-03",
+  "project_id": "process-comments-review-20260805-083607",
+  "task_title": "tester 编写测试并做修复前/后对比回归，输出 test_result",
+  "assigned_to": "tester",
+  "room_id": "room:!oln45S9baHANw0Wiwg:matrix-local.agentteams.io:18080",
+  "status": "submitted",
+  "depends_on": [
+    "process-comments-review-20260805-083607-02"
+  ],
+  "assigned_at": "2026-08-05T08:40:48Z",
+  "acknowledged_at": "2026-08-05T08:40:59Z",
+  "submitted_at": "2026-08-05T08:42:12Z"
+}

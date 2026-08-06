@@ -1,0 +1,20 @@
+==== 测试运行输出（tester 执行 test_find_max.py）====
+命令：python test_find_max.py
+退出码：EXIT=0
+
+[PASS] 正序列表 -> 3
+[PASS] 逆序列表 -> 3
+[PASS] 单元素 -> 5
+[PASS] 全零 -> 0
+[PASS] 浮点正常 -> 2.5
+[PASS] 重复最大值 -> 10
+[PASS] 单元素负数 -> -7
+[PASS] 长列表 -> 1000
+[PASS] 全同负数 -> -1
+[PASS] 全负数[-1,-2,-3] -> -1
+[PASS] 全负数[-5,-3,-8] -> -3
+[PASS] 浮点负数 -> -1.0
+[PASS] 空列表 -> 正确抛出 ValueError
+[PASS] 混入None -> 正确抛出 TypeError
+
+==== 测试结果：14/14 通过 ====

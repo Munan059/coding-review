@@ -1,0 +1,14 @@
+{
+  "task_id": "summarize-orders-review-20260805-061309-02",
+  "project_id": "summarize-orders-review-20260805-061309",
+  "task_title": "fixer 依据审查结论生成修复代码并说明修复点",
+  "assigned_to": "fixer",
+  "room_id": "room:!oln45S9baHANw0Wiwg:matrix-local.agentteams.io:18080",
+  "status": "submitted",
+  "depends_on": [
+    "summarize-orders-review-20260805-061309-01"
+  ],
+  "assigned_at": "2026-08-05T06:15:23Z",
+  "acknowledged_at": "2026-08-05T06:15:34Z",
+  "submitted_at": "2026-08-05T06:50:30Z"
+}

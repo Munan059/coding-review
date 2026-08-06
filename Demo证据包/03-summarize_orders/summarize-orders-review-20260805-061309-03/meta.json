@@ -1,0 +1,14 @@
+{
+  "task_id": "summarize-orders-review-20260805-061309-03",
+  "project_id": "summarize-orders-review-20260805-061309",
+  "task_title": "tester 编写测试并做修复前/后对比回归，输出 test_result",
+  "assigned_to": "tester",
+  "room_id": "room:!oln45S9baHANw0Wiwg:matrix-local.agentteams.io:18080",
+  "status": "submitted",
+  "depends_on": [
+    "summarize-orders-review-20260805-061309-02"
+  ],
+  "assigned_at": "2026-08-05T06:49:55Z",
+  "acknowledged_at": "2026-08-05T06:50:07Z",
+  "submitted_at": "2026-08-05T06:52:12Z"
+}

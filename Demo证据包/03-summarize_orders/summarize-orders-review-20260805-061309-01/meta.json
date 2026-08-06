@@ -1,0 +1,12 @@
+{
+  "task_id": "summarize-orders-review-20260805-061309-01",
+  "project_id": "summarize-orders-review-20260805-061309",
+  "task_title": "reviewer 审查 summarize_orders 代码并输出审查结论",
+  "assigned_to": "reviewer",
+  "room_id": "room:!oln45S9baHANw0Wiwg:matrix-local.agentteams.io:18080",
+  "status": "submitted",
+  "depends_on": [],
+  "assigned_at": "2026-08-05T06:13:20Z",
+  "acknowledged_at": "2026-08-05T06:13:25Z",
+  "submitted_at": "2026-08-05T06:14:46Z"
+}

@@ -1,0 +1,12 @@
+{
+  "task_id": "rank-students-review-20260805-050346-01",
+  "project_id": "rank-students-review-20260805-050346",
+  "task_title": "reviewer 审查 rank_students 代码并输出审查结论",
+  "assigned_to": "reviewer",
+  "room_id": "room:!oln45S9baHANw0Wiwg:matrix-local.agentteams.io:18080",
+  "status": "submitted",
+  "depends_on": [],
+  "assigned_at": "2026-08-05T05:03:55Z",
+  "acknowledged_at": "2026-08-05T05:04:01Z",
+  "submitted_at": "2026-08-05T05:05:10Z"
+}
