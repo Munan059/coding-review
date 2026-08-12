@@ -1,0 +1,13 @@
+# coding-review 可运行代码包 —— 依赖说明
+#
+# 本代码包的核心运行文件 mock_tool_server.py（自研 mock 工具网关）
+# 仅使用 Python 标准库，无需安装任何第三方依赖。
+#
+# 运行环境要求：
+#   - Python 3.10 及以上（标准库：http.server / json / os / subprocess / tempfile / textwrap / urllib.parse）
+#
+# 安装/启动方式见《运行指南.md》（仓库根目录）。
+#
+# 注：本方案未使用 MCP，工具接入通过自研 mock 工具网关（HTTP/REST，JSON）实现；
+#     多智能体（4 个 Agent）运行在 AgentTeams 平台（Docker 部署），
+#     其创建方式见 agents/create_agents_messages.md。
