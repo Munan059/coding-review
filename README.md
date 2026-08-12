@@ -1,8 +1,8 @@
 <div align="center">
 
-# 基于 AgentTeams 的多智能体代码审查系统
+# 多智能体代码审查系统（coding-review）
 
-**一句话定位：用 4 个业务智能体（orchestrator / reviewer / fixer / tester）在 AgentTeams 上跑通「审查 → 修复 → 测试」闭环，三个真实任务全部跑通至 G6 汇总关卡，含安全用例 7/7 通过**
+**一句话定位：用 4 个业务智能体（orchestrator / reviewer / fixer / tester）在 AgentTeams 上跑通「审查 → 修复 → 测试」闭环，三个真实任务全部跑通至 G5 汇总关卡，含安全用例 7/7 通过**
 
 ![framework](https://img.shields.io/badge/framework-AgentTeams-blue) ![language](https://img.shields.io/badge/language-Python-3776AB) ![license](https://img.shields.io/badge/license-MIT-green) ![tests](https://img.shields.io/badge/tests-7%2F7%20passed-brightgreen)
 
@@ -33,8 +33,8 @@
 - **📋 结构化审查报告** — reviewer 输出带行号、严重级别、复现步骤的报告，fixer 精准定位。
 - **🔄 共享状态板** — 所有 Agent 读写同一份上下文（落地为 `shared/state-board/{task_id}.json`），不靠口头传递，不重复不遗漏。
 - **🛡 安全边界** — AI 默认只读分析，改代码 / 推送 / 合并需人工确认，全程留痕可审计。
-- **✅ 真实跑通** — 三个真实任务（rank_students / process_comments / summarize_orders）全部 G6 闭环，其中安全用例 7/7 通过，退出码均为 0。
-- **🧩 四个可复用 Skill** — 比赛要求的「可复用 Skill」由团队自研：`code-review-3d`（审查三维法）/ `fix-patterns`（缺陷→修复模式库）/ `mock-gateway-protocol`（mock 网关调用协议）/ `shared-state-board`（共享状态板与终报规范）。
+- **✅ 真实跑通** — 三个真实任务（rank_students / process_comments / summarize_orders）全部 G5 闭环，其中安全用例 7/7 通过，退出码均为 0。
+- **🧩 五个可复用 Skill** — 比赛要求的「可复用 Skill」由团队自研：`code-review-3d`（审查三维法）/ `fix-patterns`（缺陷→修复模式库）/ `mock-gateway-protocol`（mock 网关调用协议）/ `shared-state-board`（共享状态板与终报规范）/ `g5-delivery`（G5 强制交付协议）。
 
 ## 🏗 架构设计
 
@@ -57,7 +57,7 @@
 - **协调官负责制**：单个智能体失败由协调官（orchestrator）自动重试，超阈值降级并转人工接管，不静默放行。
 - **上下文结构化**：审查报告、修复差异、测试日志都写入状态板，下游直接读取，避免自然语言转述的误差。
 - **最小权限**：审查员对仓库只读，修复员可提交，测试验证员运行代码。
-- **四个可复用 Skill 由团队自研**：每个业务 Agent 各绑定一个团队自研技能，与运行时内置技能互补，满足比赛「必须设计可复用 Skill」的硬指标。
+- **五个自定义可复用 Skill 由团队自研**：四个业务 Agent 各绑定至少一个团队自研技能（orchestrator 绑定共享状态板与 G5 交付两个），与运行时内置技能互补，满足比赛「必须设计可复用 Skill」的硬指标。
 
 ## 🚀 快速开始
 
@@ -122,7 +122,7 @@ coding-review/
 ├── LICENSE
 ├── .gitignore
 └── Demo证据包/                      # 端到端跑通的运行证据包
-    ├── README.md                    # 证据包总说明（三任务 G6 闭环汇总）
+    ├── README.md                    # 证据包总说明（三任务 G5 闭环汇总）
     ├── agentteams-project/          # coding-review 团队的 5 个 Agent 配置（从运行环境导出）
     │   ├── README.md                # 配置说明与四智能体协作流程
     │   ├── manager/                 # 平台默认 Agent（仅保管密钥 / 令牌，不参与团队管理）
@@ -131,7 +131,7 @@ coding-review/
     │   ├── fixer/                   # 修复员
     │   └── tester/                  # 测试验证员
     ├── 01-rank_students/            # 任务一（31 行，12/12 测试通过）
-    │   ├── 白板状态.json             # 共享状态板原始导出（status=完成 / current_gate=G6）
+    │   ├── 白板状态.json             # 共享状态板原始导出（status=完成 / current_gate=G5）
     │   ├── rank-students-review-20260805-050346-01/  # 审查阶段产物
     │   │   ├── meta.json / spec.md / result.md
     │   │   └── workspace/           # original_rank_students.py / review_report.md / verify_original.py
